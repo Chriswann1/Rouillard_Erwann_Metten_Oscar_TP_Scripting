@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
 {
@@ -15,6 +18,8 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 Console.WriteLine(CutString(charcutter, sentence)[i]);
             }
 
+            string sentencereverse = "la vie est un long fleuve tranquille";
+            Console.WriteLine(ReverseString(sentencereverse));
         }
         
         
@@ -44,6 +49,21 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             CuttedString.Add(cache);
 
             return CuttedString.ToArray();
+        }
+
+
+
+
+
+
+        static string ReverseString(string sentencetoreverse) // Fonction répondant à la 2ème question
+        {
+            string reversed = null;
+            for (int i = sentencetoreverse.Length -1; i >= 0; i--)
+            {
+                reversed += sentencetoreverse[i];
+            }
+            return reversed;
         }
     }
 }

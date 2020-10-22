@@ -23,8 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="874ff85a-e105-4540-a664-7affac26dca8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/bin/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/bin/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/bin/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/bin/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +88,10 @@
       <updated>1603283775415</updated>
       <workItem from="1603283779192" duration="696000" />
       <workItem from="1603284816070" duration="2841000" />
+      <workItem from="1603288421903" duration="13000" />
+      <workItem from="1603288509083" duration="752000" />
+      <workItem from="1603308617359" duration="88000" />
+      <workItem from="1603308787154" duration="1438000" />
     </task>
     <servers />
   </component>
@@ -106,22 +116,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1603287582478">
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom" timestamp="1603310235319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603287582478" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1603287582477">
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603310235319" />
+    <state width="1860" height="279" key="GridCell.Tab.0.center" timestamp="1603310235319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603287582477" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1603287582477">
+    <state width="1860" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603310235319" />
+    <state width="1860" height="279" key="GridCell.Tab.0.left" timestamp="1603310235319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603287582477" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1603287582478">
+    <state width="1860" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603310235319" />
+    <state width="1860" height="279" key="GridCell.Tab.0.right" timestamp="1603310235319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603287582478" />
+    <state width="1860" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603310235319" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1603286052411">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
