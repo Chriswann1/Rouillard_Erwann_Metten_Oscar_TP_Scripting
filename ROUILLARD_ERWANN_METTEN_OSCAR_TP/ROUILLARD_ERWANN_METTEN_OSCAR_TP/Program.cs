@@ -10,7 +10,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             char charcutter = 'f';
             string sentence = "Le fleuve fait le bonheur des enfants";
 
-            for (int i = 0; i < CutString(charcutter, sentence).Length; i++) //Permet d'afficher tout le tableau
+            for (int i = 0; i < CutString(charcutter, sentence).Count; i++) //Permet d'afficher tout le tableau
             {
                 Console.WriteLine(CutString(charcutter, sentence)[i]);
             }
@@ -22,7 +22,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
         
         
 
-        static string[] CutString(char cutter, string sentencetocut) //Fonction répondant à la 1ère question
+        static List<string> CutString(char cutter, string sentencetocut) //Fonction répondant à la 1ère question
         {
             string cache = null;
             List<string> CuttedString = new List<string>();
@@ -43,7 +43,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             CuttedString.Add(cache);
 
-            return CuttedString.ToArray();
+            return CuttedString;
         }
     }
 }
