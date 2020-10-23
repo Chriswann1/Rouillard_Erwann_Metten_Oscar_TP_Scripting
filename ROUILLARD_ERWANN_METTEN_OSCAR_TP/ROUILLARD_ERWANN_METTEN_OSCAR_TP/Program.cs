@@ -13,13 +13,16 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             char charcutter = 'f';
             string sentence = "Le fleuve fait le bonheur des enfants";
 
-            for (int i = 0; i < CutString(charcutter, sentence).Length; i++) //Permet d'afficher tout le tableau
+            for (int i = 0; i < CutString(charcutter, sentence).Count; i++) //Permet d'afficher tout le tableau
             {
                 Console.WriteLine(CutString(charcutter, sentence)[i]);
             }
 
             string sentencereverse = "la vie est un long fleuve tranquille";
-            Console.WriteLine(ReverseString(sentencereverse));
+            Console.WriteLine(ReverseSentence(sentencereverse));
+            
+            Console.WriteLine(ReverseWord(sentencereverse));
+
         }
         
         
@@ -27,7 +30,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
         
         
 
-        static string[] CutString(char cutter, string sentencetocut) //Fonction répondant à la 1ère question
+        static List<string> CutString(char cutter, string sentencetocut) //Fonction répondant à la 1ère question
         {
             string cache = null;
             List<string> CuttedString = new List<string>();
@@ -48,7 +51,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             CuttedString.Add(cache);
 
-            return CuttedString.ToArray();
+            return CuttedString;
         }
 
 
@@ -56,14 +59,55 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
 
 
 
-        static string ReverseString(string sentencetoreverse) // Fonction répondant à la 2ème question
+        static string ReverseSentence(string sentencetoreverse) // Fonction répondant à la 2ème question
         {
             string reversed = null;
-            for (int i = sentencetoreverse.Length -1; i >= 0; i--)
+            for (int i = sentencetoreverse.Length -1; i >= 0; i--) // Inverse la phrase entière
             {
                 reversed += sentencetoreverse[i];
             }
             return reversed;
+        }
+
+
+
+        static string ReverseWord(string sentenceword) // Fonction répondant à la 3ème question
+        {
+            string cache = null;
+            string reversed = null;
+            string result = null;
+            string lastchar;
+            for (int i = 0; i < sentenceword.Length; i++)  // découpe chaque mot grâce aux espaces
+            {
+                if (sentenceword[i] != ' ')
+                {
+                    cache += sentenceword[i].ToString();
+                }
+
+                else if (sentenceword[i] == ' ' && cache != null) // inverse les lettres des mots
+                {
+                    for (int y = cache.Length-1; y >= 0; y--)
+                        {
+                            reversed += cache[y];
+                        }
+
+                        cache = null;
+                        result += reversed + ' ';  // ajoute les mots inversés dans la phrase
+                        reversed = null;
+                }
+            }
+            if (cache != null)
+            {
+                for (int y = cache.Length-1; y >= 0; y--)  // permet d'ajouter le dernier mot dans certaines situations
+                {
+                    reversed += cache[y];
+                }
+
+                cache = null;
+                result += reversed + ' ';
+                reversed = null;
+            }
+            return result;
         }
     }
 }
