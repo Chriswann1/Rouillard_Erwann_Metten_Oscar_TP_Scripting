@@ -22,16 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="874ff85a-e105-4540-a664-7affac26dca8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/bin/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/bin/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/bin/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/bin/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ROUILLARD_ERWANN_METTEN_OSCAR_TP/obj/Debug/ROUILLARD_ERWANN_METTEN_OSCAR_TP.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="874ff85a-e105-4540-a664-7affac26dca8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,6 +83,7 @@
       <workItem from="1603288509083" duration="752000" />
       <workItem from="1603308617359" duration="88000" />
       <workItem from="1603308787154" duration="1438000" />
+      <workItem from="1603456887003" duration="72000" />
     </task>
     <servers />
   </component>
