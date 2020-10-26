@@ -21,7 +21,9 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             string sentencereverse = "la vie est un long fleuve tranquille";
             Console.WriteLine(ReverseSentence(sentencereverse));
             
-            Console.WriteLine(ReverseWord(sentencereverse));
+            Console.WriteLine(ReverseWordNotSentence(sentencereverse));
+
+            Console.WriteLine(ReverseSentenceNotWord(sentence));
 
         }
         
@@ -71,7 +73,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
 
 
 
-        static string ReverseWord(string sentenceword) // Fonction répondant à la 3ème question
+        static string ReverseWordNotSentence(string sentenceword) // Fonction répondant à la 3ème question
         {
             string cache = null;
             string reversed = null;
@@ -106,6 +108,34 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 cache = null;
                 result += reversed + ' ';
                 reversed = null;
+            }
+            return result;
+        }
+
+        static string ReverseSentenceNotWord(string sentence)
+        {
+            string result = null;
+            List<string> wordcache = new List<string>();
+            string cache = null;
+            
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                if (sentence[i] != ' ')
+                {
+                    cache += sentence[i];
+                }
+                else
+                {
+                    wordcache.Add(cache);
+                    cache = null;
+                }
+            }
+            wordcache.Add(cache);
+            cache = null;
+            for (int y = wordcache.Count-1; y >= 0 ; y--)
+            {
+                Console.WriteLine(y);
+                result += wordcache[y];
             }
             return result;
         }
