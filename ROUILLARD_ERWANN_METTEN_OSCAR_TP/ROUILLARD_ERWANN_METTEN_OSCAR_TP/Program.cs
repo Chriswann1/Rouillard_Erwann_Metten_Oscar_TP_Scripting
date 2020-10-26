@@ -30,6 +30,11 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             int[] small = { 5, 6, 4, 20, 1 };
             Console.WriteLine("L'index le plus petit est" + SmallestIndex(small));
 
+            for (int i = 0; i < InsertionSort(small).Length; i++)
+            {
+                Console.WriteLine(InsertionSort(small)[i]);
+            }
+
         }
         
         
@@ -159,8 +164,25 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return index;
         }
-        
-        
+
+        static int[] InsertionSort(int[] Arraytosort) //Réponse à l'exo 7
+        {
+            int cache = 0; //Cache du nombre au dessus (y+1)
+            for (int i = 0; i < Arraytosort.Length; i++) //Boucle permettant de répéter le triage 
+            {
+                for (int y = 0; y < Arraytosort.Length; y++) //Boucle permettant le triage
+                {
+                    if (y+1 != Arraytosort.Length && Arraytosort[y] > Arraytosort[y + 1])
+                    {
+                        cache = Arraytosort[y + 1];
+                        Arraytosort[y + 1] = Arraytosort[y];
+                        Arraytosort[y] = cache;
+                        Console.WriteLine("index"+ y);
+                    }
+                }
+            }
+            return Arraytosort;
+        }
         
     }
 }
