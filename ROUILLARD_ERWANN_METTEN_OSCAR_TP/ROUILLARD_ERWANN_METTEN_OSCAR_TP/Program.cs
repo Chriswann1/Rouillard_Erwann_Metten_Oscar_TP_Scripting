@@ -14,25 +14,38 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             char charcutter = 'f';
             string sentence = "Le fleuve fait le bonheur des enfants";
 
-            for (int i = 0; i < CutString(charcutter, sentence).Count; i++) //Permet d'afficher tout le tableau
+            for (int i = 0; i < CutString(charcutter, sentence).Count; i++) //Permet d'afficher tout le tableau de la 1ère question
             {
                 Console.WriteLine(CutString(charcutter, sentence)[i]);
             }
 
             string sentencereverse = "la vie est un long fleuve tranquille";
-            Console.WriteLine(ReverseSentence(sentencereverse));
+            Console.WriteLine(ReverseSentence(sentencereverse)); //Test 2ème question
             
+            Console.WriteLine(ReverseWordNotSentence(sentencereverse)); //Test 3ème question
+
 
             Console.WriteLine(ReverseWordNotSentence(sentencereverse));
             
             Console.WriteLine(ReverseWordNotSentence(sentencereverse));
-            
-            int[] small = { 5, 6, 4, 20, 1 };
-            Console.WriteLine("L'index le plus petit est" + SmallestIndex(small));
 
-            for (int i = 0; i < InsertionSort(small).Length; i++)
+            Console.WriteLine(ReverseSentenceNotWord(sentence)); //Test 4ème question
+
+            
+            int[] entiers = { 8, 6, 48, 3, 50 };
+            Console.WriteLine("L'index le plus petit est" + SmallestIndex(entiers)); // Test 5ème question
+
+
+            for (int i = 0; i < InsertionSort(entiers).Length; i++)
             {
-                Console.WriteLine(InsertionSort(small)[i]);
+                Console.WriteLine(InsertionSort(entiers)[i]);
+            }
+
+
+            
+            for (int i = 0; i < SortBubble(entiers).Length; i++) //Permet d'afficher tout le tableau de la 6ème question
+            {
+                Console.WriteLine(SortBubble(entiers)[i]);
             }
 
         }
@@ -66,11 +79,6 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             return CuttedString;
         }
 
-
-
-
-
-
         static string ReverseSentence(string sentencetoreverse) // Fonction répondant à la 2ème question
         {
             string reversed = null;
@@ -80,9 +88,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return reversed;
         }
-
-
-
+        
         static string ReverseWordNotSentence(string sentenceword) // Fonction répondant à la 3ème question
         {
             string cache = null;
@@ -144,7 +150,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             cache = null;
             for (int y = wordcache.Count-1; y >= 0 ; y--)
             {
-                Console.WriteLine(y);
+                //Console.WriteLine(y);
                 result += wordcache[y];
             }
             return result;
@@ -165,6 +171,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             return index;
         }
 
+
         static int[] InsertionSort(int[] Arraytosort) //Réponse à l'exo 7
         {
             int cache = 0; //Cache du nombre au dessus (y+1)
@@ -177,12 +184,35 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                         cache = Arraytosort[y + 1];
                         Arraytosort[y + 1] = Arraytosort[y];
                         Arraytosort[y] = cache;
-                        Console.WriteLine("index"+ y);
+                        //Console.WriteLine("index"+ y);
                     }
                 }
             }
             return Arraytosort;
         }
         
+
+
+        static int[] SortBubble(int[] bubble) // Fonction répondant à la 6ème question
+        {
+            int cache1;
+            int cache2;
+            for (int i = 0; i < bubble.Length; i++)  
+            {                                                // les 2 boucles For permettent de faire le bon
+                for (int y = 0; y < bubble.Length; y++)      // nombre d'itérations pour la longueur du tableau
+                {
+                    if (y+1 != bubble.Length && bubble[y] > bubble[y+1])  //On vérifie si l'élément suivant est plus petit que l'élément actuel
+                    {
+                        cache1 = bubble[y];
+                        cache2 = bubble[y + 1];
+                        bubble[y] = cache2;                            //On inverse les 2 éléments
+                        bubble[y + 1] = cache1;
+                    }
+                }
+            }
+
+            return bubble;
+        }
+
     }
 }
