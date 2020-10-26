@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 
+
 namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
 {
     internal class Program
@@ -21,9 +22,16 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             string sentencereverse = "la vie est un long fleuve tranquille";
             Console.WriteLine(ReverseSentence(sentencereverse));
             
+
             Console.WriteLine(ReverseWordNotSentence(sentencereverse));
 
             Console.WriteLine(ReverseSentenceNotWord(sentence));
+
+
+            Console.WriteLine(ReverseWordNotSentence(sentencereverse));
+            
+            int[] small = { 5, 6, 4, 20, 1 };
+            Console.WriteLine("L'index le plus petit est" + SmallestIndex(small));
 
         }
         
@@ -111,14 +119,14 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return result;
         }
-
-        static string ReverseSentenceNotWord(string sentence)
+        
+        static string ReverseSentenceNotWord(string sentence) //Fonction répondant à la 4ème question
         {
-            string result = null;
-            List<string> wordcache = new List<string>();
-            string cache = null;
+            string result = null; //Le resultat
+            List<string> wordcache = new List<string>(); //On fais un 'cache' pour les mots
+            string cache = null; //Le cache pour un mot
             
-            for (int i = 0; i < sentence.Length; i++)
+            for (int i = 0; i < sentence.Length; i++) //Boucle for permettant de séparer les mots dans un string à part (dans la liste wordcache)
             {
                 if (sentence[i] != ' ')
                 {
@@ -130,7 +138,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                     cache = null;
                 }
             }
-            wordcache.Add(cache);
+            wordcache.Add(cache); //Pour le dernier mot de la liste
             cache = null;
             for (int y = wordcache.Count-1; y >= 0 ; y--)
             {
@@ -139,5 +147,21 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return result;
         }
+        
+        static int SmallestIndex(int[] smallIndex)  // Fonction répondant à la 5ème question
+        {
+            int cache = smallIndex[0];
+            int index = 0; 
+            for (int i = 0; i < smallIndex.Length; i++) // Boucle qui s'effectue pour le nombre d'entiers contenus dans le tableau
+            {
+                if (smallIndex[i] < cache)
+                {
+                    cache = smallIndex[i];                    // ajout du plus petit entier
+                    index = Array.IndexOf(smallIndex, cache);  // ajout de l'index du plus petit entier du tableau
+                }
+            }
+            return index;
+        }
+        
     }
 }
