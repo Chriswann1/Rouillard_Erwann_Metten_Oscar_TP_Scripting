@@ -22,10 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c122bb7-f199-4247-b073-7aeedbd904af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.ROUILLARD_ERWANN_METTEN_OSCAR_TP/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5c122bb7-f199-4247-b073-7aeedbd904af" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,13 +71,14 @@
       <option name="presentableId" value="Default" />
       <updated>1603288457791</updated>
       <workItem from="1603288462326" duration="9000" />
+      <workItem from="1603720224895" duration="5000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -92,6 +90,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

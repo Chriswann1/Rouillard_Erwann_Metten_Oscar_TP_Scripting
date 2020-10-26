@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 
+
 namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
 {
     internal class Program
@@ -22,7 +23,9 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             Console.WriteLine(ReverseSentence(sentencereverse));
             
             Console.WriteLine(ReverseWord(sentencereverse));
-
+            
+            int[] small = { 5, 6, 4, 20, 1 };
+            Console.WriteLine("L'index le plus petit est" + SmallestIndex(small));
         }
         
         
@@ -109,5 +112,27 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return result;
         }
+
+
+
+
+
+        static int SmallestIndex(int[] smallIndex)  // Fonction répondant à la 5ème question
+        {
+            int cache = smallIndex[0];
+            int index = 0; 
+            for (int i = 0; i < smallIndex.Length; i++) // Boucle qui s'effectue pour le nombre d'entiers contenus dans le tableau
+            {
+                if (smallIndex[i] < cache)
+                {
+                    cache = smallIndex[i];                    // ajout du plus petit entier
+                    index = Array.IndexOf(smallIndex, cache);  // ajout de l'index du plus petit entier du tableau
+                }
+            }
+            return index;
+        }
+        
+        
+        
     }
 }
