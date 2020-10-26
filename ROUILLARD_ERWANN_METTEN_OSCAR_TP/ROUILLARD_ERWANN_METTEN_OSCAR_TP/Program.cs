@@ -24,10 +24,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             
 
             Console.WriteLine(ReverseWordNotSentence(sentencereverse));
-
-            Console.WriteLine(ReverseSentenceNotWord(sentence));
-
-
+            
             Console.WriteLine(ReverseWordNotSentence(sentencereverse));
             
             int[] small = { 5, 6, 4, 20, 1 };
@@ -162,6 +159,8 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return index;
         }
+        
+        
         
     }
 }
