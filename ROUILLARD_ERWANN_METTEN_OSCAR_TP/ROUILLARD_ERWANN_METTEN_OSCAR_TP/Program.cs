@@ -34,27 +34,22 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             
             int[] entiers = { 8, 6, 48, 3, 50 };
             Console.WriteLine("L'index le plus petit est" + SmallestIndex(entiers)); // Test 5ème question
-
-
-            for (int i = 0; i < InsertionSort(entiers).Length; i++)
-            {
-                Console.WriteLine(InsertionSort(entiers)[i]);
-            }
-
-
+            
             
             for (int i = 0; i < SortBubble(entiers).Length; i++) //Permet d'afficher tout le tableau de la 6ème question
             {
                 Console.WriteLine(SortBubble(entiers)[i]);
+            }
+            
+            for (int i = 0; i < InsertionSort(entiers).Length; i++)  // Permet d'afficher tout le tableau de la 7ème question
+            {
+                Console.WriteLine(InsertionSort(entiers)[i]);
             }
 
         }
         
         
         
-        
-        
-
         static List<string> CutString(char cutter, string sentencetocut) //Fonction répondant à la 1ère question
         {
             string cache = null;
@@ -170,29 +165,8 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return index;
         }
-
-
-        static int[] InsertionSort(int[] Arraytosort) //Réponse à l'exo 7
-        {
-            int cache = 0; //Cache du nombre au dessus (y+1)
-            for (int i = 0; i < Arraytosort.Length; i++) //Boucle permettant de répéter le triage 
-            {
-                for (int y = 0; y < Arraytosort.Length; y++) //Boucle permettant le triage
-                {
-                    if (y+1 != Arraytosort.Length && Arraytosort[y] > Arraytosort[y + 1])
-                    {
-                        cache = Arraytosort[y + 1];
-                        Arraytosort[y + 1] = Arraytosort[y];
-                        Arraytosort[y] = cache;
-                        //Console.WriteLine("index"+ y);
-                    }
-                }
-            }
-            return Arraytosort;
-        }
         
-
-
+        
         static int[] SortBubble(int[] bubble) // Fonction répondant à la 6ème question
         {
             int cache1;
@@ -214,5 +188,24 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             return bubble;
         }
 
+        
+        static int[] InsertionSort(int[] Arraytosort) //Réponse à l'exo 7
+        {
+            int cache = 0; //Cache du nombre au dessus (y+1)
+            for (int i = 0; i < Arraytosort.Length; i++) //Boucle permettant de répéter le triage 
+            {
+                for (int y = 0; y < Arraytosort.Length; y++) //Boucle permettant le triage
+                {
+                    if (y+1 != Arraytosort.Length && Arraytosort[y] > Arraytosort[y + 1])
+                    {
+                        cache = Arraytosort[y + 1];
+                        Arraytosort[y + 1] = Arraytosort[y];
+                        Arraytosort[y] = cache;
+                        //Console.WriteLine("index"+ y);
+                    }
+                }
+            }
+            return Arraytosort;
+        }
     }
 }
