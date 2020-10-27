@@ -45,6 +45,15 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             {
                 Console.WriteLine(InsertionSort(entiers)[i]);
             }
+            
+            List<int> Entiers1 = new List<int> {5,7,9,63,65,41};
+            List<int> Entiers2 = new List<int> {9,3,7,20,75,96,43,85};
+            
+
+            foreach (int Valeur in Fusion(Entiers1,Entiers2))
+            {
+                Console.WriteLine(Valeur);
+            }
 
         }
         
@@ -207,5 +216,33 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return Arraytosort;
         }
+        
+        
+        static List<int> Fusion (List<int> entierA, List<int> entierB)
+        {
+            
+            List<int> listfusion = new List<int>();
+            if (entierA == null)
+            {
+                return entierB;
+            }
+            if (entierB == null)
+            {
+                return entierA;
+            }
+            if (entierA[0] < entierB[0])
+            {
+                listfusion = entierA;
+                listfusion.AddRange(entierB);
+            }
+            else
+            {
+                listfusion = entierB;
+                listfusion.AddRange(entierA);
+            }
+            return listfusion;
+        }
+        
+        
     }
 }
