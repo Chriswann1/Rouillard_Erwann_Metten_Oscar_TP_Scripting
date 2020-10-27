@@ -47,11 +47,17 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             
             List<int> Entiers1 = new List<int> {5,7,9,63,65,41};
             List<int> Entiers2 = new List<int> {9,3,7,20,75,96,43,85};
+            List<int> Entiers3 = new List<int> {1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1};
             
 
             foreach (int Valeur in Fusion(Entiers1,Entiers2))
             {
                 Console.WriteLine(Valeur);
+            }
+
+            foreach (int elements in triFusion(Entiers3))
+            {
+                Console.WriteLine("TriFusion : " + elements);
             }
 
         }
@@ -215,34 +221,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return Arraytosort;
         }
-
-        static List<int> triFusion(List<int> listtocut, int iteration)
-        {
-            List<int> lista = new List<int>();
-            List<int> listb = new List<int>();
-            int half = listtocut.Count / 2;
-            for (int i = 0; i < half; i++)
-            {
-                lista.Add(listtocut[i]);
-            }
-
-            for (int i = half; i < listtocut.Count; i++)
-            {
-                listb.Add(listtocut[i]);
-            }
-
-            lista = InsertionSort(lista.ToArray()).ToList();
-            listb = InsertionSort(listb.ToArray()).ToList();
-            if (iteration == listtocut.Count)
-            {
-                return null;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
+        
         static List<int> Fusion (List<int> entierA, List<int> entierB)
         {
             
@@ -255,7 +234,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             {
                 return entierA;
             }
-            if (entierA[0] < entierB[0])
+            if (entierA[0] <= entierB[0])
             {
                 listfusion = entierA;
                 listfusion.AddRange(entierB);
@@ -267,6 +246,41 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return listfusion;
         }
+        
+        static List<int> triFusion(List<int> listtocut)
+        {
+            if (listtocut.Count <= 1)
+            {
+                return listtocut;
+            }
+            Console.WriteLine("in recursive"+listtocut.Count);
+            
+            List<int> lista = new List<int>();
+            List<int> listb = new List<int>();
+            
+            int half = (listtocut.Count/2);
+            
+            for (int i = 0; i < half; i++)
+            {
+                lista.Add(listtocut[i]);
+                //Console.WriteLine(i);
+            }
+
+            for (int i = half; i < listtocut.Count; i++)
+            {
+                listb.Add(listtocut[i]);
+                //Console.WriteLine(i);
+            }
+
+            lista = InsertionSort(lista.ToArray()).ToList();
+            listb = InsertionSort(listb.ToArray()).ToList();
+
+            return Fusion(triFusion(lista),triFusion(listb));
+
+            
+        }
+        
+        
         
     }
 }
