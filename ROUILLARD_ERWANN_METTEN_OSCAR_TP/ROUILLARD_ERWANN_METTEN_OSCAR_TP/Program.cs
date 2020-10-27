@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
+
 
 
 namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
@@ -206,6 +205,33 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 }
             }
             return Arraytosort;
+        }
+
+        static List<int> triFusion(List<int> listtocut, int iteration)
+        {
+            List<int> lista = new List<int>();
+            List<int> listb = new List<int>();
+            int half = listtocut.Count / 2;
+            for (int i = 0; i < half; i++)
+            {
+                lista.Add(listtocut[i]);
+            }
+
+            for (int i = half; i < listtocut.Count; i++)
+            {
+                listb.Add(listtocut[i]);
+            }
+
+            lista = InsertionSort(lista.ToArray()).ToList();
+            listb = InsertionSort(listb.ToArray()).ToList();
+            if (iteration == listtocut.Count)
+            {
+                return null;
+            }
+            else
+            {
+                return 
+            }
         }
     }
 }
