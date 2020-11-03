@@ -1,8 +1,8 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
+//INDEV = In development
 
 namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
 {
@@ -11,54 +11,60 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
         public static void Main(string[] args)
         {
             char charcutter = 'f';
+            
             string sentence = "Le fleuve fait le bonheur des enfants";
-
+            string sentencereverse = "la vie est un long fleuve tranquille";
+            
+            int[] entiers = { 8, 6, 48, 3, 50 };
+            
+            List<int> Entiers1 = new List<int> {5,7,9,63,65,41};
+            List<int> Entiers2 = new List<int> {9,3,7,20,75,96,43,85};
+            List<int> Entiers3 = new List<int> {1,25,45,5,7,9,63,65,41,1,25,25,45,1};
+            
+            Console.WriteLine("--------------> Sortie Exo 1 <--------------");
             for (int i = 0; i < CutString(charcutter, sentence).Count; i++) //Permet d'afficher tout le tableau de la 1ère question
             {
                 Console.WriteLine(CutString(charcutter, sentence)[i]);
             }
 
-            string sentencereverse = "la vie est un long fleuve tranquille";
+
+            Console.WriteLine("--------------> Sortie Exo 2 <--------------");
             Console.WriteLine(ReverseSentence(sentencereverse)); //Test 2ème question
             
+            Console.WriteLine("--------------> Sortie Exo 3 <--------------");
             Console.WriteLine(ReverseWordNotSentence(sentencereverse)); //Test 3ème question
 
-
-            Console.WriteLine(ReverseWordNotSentence(sentencereverse));
-            
-            Console.WriteLine(ReverseWordNotSentence(sentencereverse));
-
+            Console.WriteLine("--------------> Sortie Exo 4 <--------------");
             Console.WriteLine(ReverseSentenceNotWord(sentence)); //Test 4ème question
 
             
-            int[] entiers = { 8, 6, 48, 3, 50 };
+            
+            Console.WriteLine("--------------> Sortie Exo 5 <--------------");
             Console.WriteLine("L'index le plus petit est" + SmallestIndex(entiers)); // Test 5ème question
             
-            
+            Console.WriteLine("--------------> Sortie Exo 6 <--------------");
             for (int i = 0; i < SortBubble(entiers).Length; i++) //Permet d'afficher tout le tableau de la 6ème question
             {
                 Console.WriteLine(SortBubble(entiers)[i]);
             }
             
+            Console.WriteLine("--------------> Sortie Exo 7 <--------------");
             for (int i = 0; i < InsertionSort(entiers).Length; i++)  // Permet d'afficher tout le tableau de la 7ème question
             {
                 Console.WriteLine(InsertionSort(entiers)[i]);
             }
-            
-            List<int> Entiers1 = new List<int> {0,2,4,5,6};
-            List<int> Entiers2 = new List<int> {1,7,9,5,4,9};
-            //List<int> Entiers3 = new List<int> {1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1};
-            
 
+            Console.WriteLine("--------------> Sortie Exo 8 <--------------");
             foreach (int Valeur in Fusion(Entiers1,Entiers2))
             {
                 Console.WriteLine(Valeur);
             }
 
-            /*foreach (int elements in triFusion(Entiers3))
+            Console.WriteLine("--------------> Sortie Exo 9 <--------------");
+            foreach (int elements in triFusion(Entiers3))
             {
                 Console.WriteLine("TriFusion : " + elements);
-            }*/
+            }
 
         }
         
@@ -103,7 +109,6 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             string cache = null;
             string reversed = null;
             string result = null;
-            string lastchar;
             for (int i = 0; i < sentenceword.Length; i++)  // découpe chaque mot grâce aux espaces
             {
                 if (sentenceword[i] != ' ')
@@ -220,31 +225,40 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             return Arraytosort;
         }
         
-        static List<int> Fusion (List<int> entierA, List<int> entierB)
+        static List<int> Fusion (List<int> entierA, List<int> entierB) //Fonction réponse à l'exo 8 INDEV
         {
-            int a = entierA.Count;
-            int b = entierB.Count;
-            List<int> listfusion = new List<int>();
-            if (!entierA.Any())
+            int n = 0;
+            if (!entierA.Any() && !entierB.Any())
+            {
+                return new List<int>() {0};
+            }
+            else if (!entierA.Any())
             {
                 return entierB;
             }
-            if (!entierB.Any())
+            else if (!entierB.Any())
             {
                 return entierA;
             }
-            if (entierA[0] < entierB[0])
-            {
-                listfusion = entierA[0] + Fusion(entierA[1],entierB);
+            if (entierA[n] <= entierB[n])
+            {                           // On a essayé beaucoup de méthodes mais toutes infructueuses.
+                List<int> listA = new List<int>(); 
+                listA.AddRange(entierA.Skip(n+1));
+                return new List<int>(){entierA[n]}.Concat(Fusion(listA, entierB)).ToList();
+                //return null; // Pour pouvoir lancer le programme
+                n = n + 1;
             }
             else
             {
-                listfusion = entierB;
+                List<int> listB = new List<int>(); 
+                listB.AddRange(entierA.Skip(n+1));
+                return new List<int>(){entierA[n]}.Concat(Fusion(entierA, listB)).ToList();
+                n = n + 1;
             }
-            return listfusion;
+
         }
         
-        static List<int> triFusion(List<int> listtocut)
+        static List<int> triFusion(List<int> listtocut) //Fonction réponse à l'exo 9
         {
             if (listtocut.Count <= 1)
             {
@@ -268,12 +282,9 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 listb.Add(listtocut[i]);
                 //Console.WriteLine(i);
             }
-
-            lista = InsertionSort(lista.ToArray()).ToList();
-            listb = InsertionSort(listb.ToArray()).ToList();
-
+            
             return Fusion(triFusion(lista),triFusion(listb));
-
+            
             
         }
         
