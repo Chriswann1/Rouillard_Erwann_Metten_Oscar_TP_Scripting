@@ -241,11 +241,10 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 return entierA;
             }
             if (entierA[n] <= entierB[n])
-            {                           // On a essayé beaucoup de méthodes mais toutes infructueuses.
-                List<int> listA = new List<int>(); 
+            {                                         // On a essayé beaucoup de méthodes mais toutes infructueuses,
+                List<int> listA = new List<int>();   // c'est la version la plus aboutie qu'on a réussi à faire.
                 listA.AddRange(entierA.Skip(n+1));
                 return new List<int>(){entierA[n]}.Concat(Fusion(listA, entierB)).ToList();
-                //return null; // Pour pouvoir lancer le programme
                 n = n + 1;
             }
             else
