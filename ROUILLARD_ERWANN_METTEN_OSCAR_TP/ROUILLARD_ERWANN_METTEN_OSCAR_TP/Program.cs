@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-
+//INDEV = In development
 
 namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
 {
@@ -11,43 +11,50 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
         public static void Main(string[] args)
         {
             char charcutter = 'f';
+            
             string sentence = "Le fleuve fait le bonheur des enfants";
-
+            string sentencereverse = "la vie est un long fleuve tranquille";
+            
+            int[] entiers = { 8, 6, 48, 3, 50 };
+            
+            List<int> Entiers1 = new List<int> {5,7,9,63,65,41};
+            List<int> Entiers2 = new List<int> {9,3,7,20,75,96,43,85};
+            List<int> Entiers3 = new List<int> {1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1};
+            
+            Console.WriteLine("--------------> Sortie Exo 1 <--------------");
             for (int i = 0; i < CutString(charcutter, sentence).Count; i++) //Permet d'afficher tout le tableau de la 1ère question
             {
                 Console.WriteLine(CutString(charcutter, sentence)[i]);
             }
 
-            string sentencereverse = "la vie est un long fleuve tranquille";
+
+            Console.WriteLine("--------------> Sortie Exo 2 <--------------");
             Console.WriteLine(ReverseSentence(sentencereverse)); //Test 2ème question
             
+            Console.WriteLine("--------------> Sortie Exo 3 <--------------");
             Console.WriteLine(ReverseWordNotSentence(sentencereverse)); //Test 3ème question
 
-
-            Console.WriteLine(ReverseWordNotSentence(sentencereverse));
-            
-            Console.WriteLine(ReverseWordNotSentence(sentencereverse));
-
+            Console.WriteLine("--------------> Sortie Exo 4 <--------------");
             Console.WriteLine(ReverseSentenceNotWord(sentence)); //Test 4ème question
 
             
-            int[] entiers = { 8, 6, 48, 3, 50 };
+            
+            Console.WriteLine("--------------> Sortie Exo 5 <--------------");
             Console.WriteLine("L'index le plus petit est" + SmallestIndex(entiers)); // Test 5ème question
             
-            
+            Console.WriteLine("--------------> Sortie Exo 6 <--------------");
             for (int i = 0; i < SortBubble(entiers).Length; i++) //Permet d'afficher tout le tableau de la 6ème question
             {
                 Console.WriteLine(SortBubble(entiers)[i]);
             }
             
+            Console.WriteLine("--------------> Sortie Exo 7 <--------------");
             for (int i = 0; i < InsertionSort(entiers).Length; i++)  // Permet d'afficher tout le tableau de la 7ème question
             {
                 Console.WriteLine(InsertionSort(entiers)[i]);
             }
             
-            List<int> Entiers1 = new List<int> {5,7,9,63,65,41};
-            List<int> Entiers2 = new List<int> {9,3,7,20,75,96,43,85};
-            List<int> Entiers3 = new List<int> {1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1};
+            
             
 
             foreach (int Valeur in Fusion(Entiers1,Entiers2))
@@ -222,9 +229,9 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             return Arraytosort;
         }
         
-        static List<int> Fusion (List<int> entierA, List<int> entierB)
+        static List<int> Fusion (List<int> entierA, List<int> entierB) //Fonction réponse à l'exo 8 INDEV
         {
-            List<int> listfusion = new List<int>();
+            List<int> listfusion = new List<int>(); 
             if (entierA == null)
             {
                 return entierB;
@@ -235,17 +242,17 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             if (entierA[1] <= entierB[1])
             {
-                return ;
+                return new List<int>(){entierA[1]}.Concat(Fusion(new List<int>().AddRange(entierA.Skip(2)), entierB));
                 
             }
             else
             {
-                
+                return null;
             }
             
         }
         
-        static List<int> triFusion(List<int> listtocut)
+        static List<int> triFusion(List<int> listtocut) //Fonction réponse à l'exo 9
         {
             if (listtocut.Count <= 1)
             {
