@@ -224,7 +224,6 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
         
         static List<int> Fusion (List<int> entierA, List<int> entierB)
         {
-            
             List<int> listfusion = new List<int>();
             if (entierA == null)
             {
@@ -234,17 +233,16 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             {
                 return entierA;
             }
-            if (entierA[0] <= entierB[0])
+            if (entierA[1] <= entierB[1])
             {
-                listfusion = entierA;
-                listfusion.AddRange(entierB);
+                return ;
+                
             }
             else
             {
-                listfusion = entierB;
-                listfusion.AddRange(entierA);
+                
             }
-            return listfusion;
+            
         }
         
         static List<int> triFusion(List<int> listtocut)
@@ -271,12 +269,12 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 listb.Add(listtocut[i]);
                 //Console.WriteLine(i);
             }
-
+            
             lista = InsertionSort(lista.ToArray()).ToList();
             listb = InsertionSort(listb.ToArray()).ToList();
-
+            
             return Fusion(triFusion(lista),triFusion(listb));
-
+            
             
         }
         
