@@ -45,9 +45,9 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 Console.WriteLine(InsertionSort(entiers)[i]);
             }
             
-            List<int> Entiers1 = new List<int> {5,7,9,63,65,41};
-            List<int> Entiers2 = new List<int> {9,3,7,20,75,96,43,85};
-            List<int> Entiers3 = new List<int> {1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1};
+            List<int> Entiers1 = new List<int> {0,2,4,5,6};
+            List<int> Entiers2 = new List<int> {1,7,9,5,4,9};
+            //List<int> Entiers3 = new List<int> {1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,5,7,9,63,65,41,1,25,45,1};
             
 
             foreach (int Valeur in Fusion(Entiers1,Entiers2))
@@ -55,10 +55,10 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 Console.WriteLine(Valeur);
             }
 
-            foreach (int elements in triFusion(Entiers3))
+            /*foreach (int elements in triFusion(Entiers3))
             {
                 Console.WriteLine("TriFusion : " + elements);
-            }
+            }*/
 
         }
         
@@ -179,8 +179,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             }
             return index;
         }
-        
-        
+
         static int[] SortBubble(int[] bubble) // Fonction répondant à la 6ème question
         {
             int cache1;
@@ -202,7 +201,6 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
             return bubble;
         }
 
-        
         static int[] InsertionSort(int[] Arraytosort) //Réponse à l'exo 7
         {
             int cache = 0; //Cache du nombre au dessus (y+1)
@@ -224,25 +222,24 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
         
         static List<int> Fusion (List<int> entierA, List<int> entierB)
         {
-            
+            int a = entierA.Count;
+            int b = entierB.Count;
             List<int> listfusion = new List<int>();
-            if (entierA == null)
+            if (!entierA.Any())
             {
                 return entierB;
             }
-            if (entierB == null)
+            if (!entierB.Any())
             {
                 return entierA;
             }
-            if (entierA[0] <= entierB[0])
+            if (entierA[0] < entierB[0])
             {
-                listfusion = entierA;
-                listfusion.AddRange(entierB);
+                listfusion = entierA[0] + Fusion(entierA[1],entierB);
             }
             else
             {
                 listfusion = entierB;
-                listfusion.AddRange(entierA);
             }
             return listfusion;
         }
