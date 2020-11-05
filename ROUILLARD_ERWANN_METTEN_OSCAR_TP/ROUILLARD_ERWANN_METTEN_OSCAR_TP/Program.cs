@@ -72,20 +72,20 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
         
         static List<string> CutString(char cutter, string sentencetocut) //Fonction répondant à la 1ère question
         {
-            string cache = null;
+            string cache = "";
             List<string> CuttedString = new List<string>();
             for (int i = 0; i < sentencetocut.Length; i++)
             {
-                if (sentencetocut[i] != 'f')
+                if (sentencetocut[i] != cutter)
                 {
-                    cache += sentencetocut[i].ToString();
+                    cache += sentencetocut[i];
                 }
 
-                else if (sentencetocut[i] == 'f')
+                else if (sentencetocut[i] == cutter)
                 {
                     //Console.WriteLine("Cutted");                  //Permet de voir quand la fonction cut la phrase
                     CuttedString.Add(cache);
-                    cache = null;
+                    cache = "";
                 }
                 //Console.WriteLine(i);                                //Permet de voir l'index
             }
@@ -96,7 +96,7 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
 
         static string ReverseSentence(string sentencetoreverse) // Fonction répondant à la 2ème question
         {
-            string reversed = null;
+            string reversed = "";
             for (int i = sentencetoreverse.Length -1; i >= 0; i--) // Inverse la phrase entière
             {
                 reversed += sentencetoreverse[i];
@@ -106,9 +106,9 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
         
         static string ReverseWordNotSentence(string sentenceword) // Fonction répondant à la 3ème question
         {
-            string cache = null;
-            string reversed = null;
-            string result = null;
+            string cache = "";
+            string reversed = "";
+            string result = "";
             for (int i = 0; i < sentenceword.Length; i++)  // découpe chaque mot grâce aux espaces
             {
                 if (sentenceword[i] != ' ')
@@ -116,37 +116,37 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                     cache += sentenceword[i].ToString();
                 }
 
-                else if (sentenceword[i] == ' ' && cache != null) // inverse les lettres des mots
+                else if (sentenceword[i] == ' ' && cache != "") // inverse les lettres des mots
                 {
                     for (int y = cache.Length-1; y >= 0; y--)
                         {
                             reversed += cache[y];
                         }
 
-                        cache = null;
+                        cache = "";
                         result += reversed + ' ';  // ajoute les mots inversés dans la phrase
-                        reversed = null;
+                        reversed = "";
                 }
             }
-            if (cache != null)
+            if (cache != "")
             {
                 for (int y = cache.Length-1; y >= 0; y--)  // permet d'ajouter le dernier mot dans certaines situations
                 {
                     reversed += cache[y];
                 }
 
-                cache = null;
+                cache = "";
                 result += reversed + ' ';
-                reversed = null;
+                reversed = "";
             }
             return result;
         }
         
         static string ReverseSentenceNotWord(string sentence) //Fonction répondant à la 4ème question
         {
-            string result = null; //Le resultat
+            string result = ""; //Le resultat
             List<string> wordcache = new List<string>(); //On fais un 'cache' pour les mots
-            string cache = null; //Le cache pour un mot
+            string cache = ""; //Le cache pour un mot
             
             for (int i = 0; i < sentence.Length; i++) //Boucle for permettant de séparer les mots dans un string à part (dans la liste wordcache)
             {
@@ -157,11 +157,11 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 else
                 {
                     wordcache.Add(cache);
-                    cache = null;
+                    cache = "";
                 }
             }
             wordcache.Add(cache); //Pour le dernier mot de la liste
-            cache = null;
+            cache = "";
             for (int y = wordcache.Count-1; y >= 0 ; y--)
             {
                 //Console.WriteLine(y);
@@ -245,14 +245,12 @@ namespace ROUILLARD_ERWANN_METTEN_OSCAR_TP
                 List<int> listA = new List<int>();   // c'est la version la plus aboutie qu'on a réussi à faire.
                 listA.AddRange(entierA.Skip(n+1));
                 return new List<int>(){entierA[n]}.Concat(Fusion(listA, entierB)).ToList();
-                n = n + 1;
             }
             else
             {
                 List<int> listB = new List<int>(); 
                 listB.AddRange(entierA.Skip(n+1));
                 return new List<int>(){entierA[n]}.Concat(Fusion(entierA, listB)).ToList();
-                n = n + 1;
             }
 
         }
